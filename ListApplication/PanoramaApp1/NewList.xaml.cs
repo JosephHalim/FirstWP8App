@@ -19,12 +19,15 @@ namespace PanoramaApp1
 
 
 
-        public void Add_New_List(Object sender, EventArgs e)
+        public  void Add_New_List(Object sender, EventArgs e)
         {
-            List<string> ListofItems = new List<string>();
+            
             string hold = txbNewList.Text;
-            ListofItems.Add(hold);
+           myGlobals.ListofItems.Add(hold);
+
+           MessageBox.Show(myGlobals.ListofItems[0]);
            NavigationService.Navigate(new Uri("/MainPage.xaml",UriKind.Relative));
+          
         }
     }
 }

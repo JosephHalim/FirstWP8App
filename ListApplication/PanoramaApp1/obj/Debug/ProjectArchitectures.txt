@@ -1,1 +1,1 @@
-C:\Users\Joseph\documents\visual studio 2013\Projects\PanoramaApp1\PanoramaApp1\PanoramaApp1.csproj;neutral
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\PanoramaApp1.csproj;neutral

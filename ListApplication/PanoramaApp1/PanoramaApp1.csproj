@@ -102,6 +102,7 @@
     <Compile Include="List.xaml.cs">
       <DependentUpon>List.xaml</DependentUpon>
     </Compile>
+    <Compile Include="myGlobals.cs" />
     <Compile Include="NewList.xaml.cs">
       <DependentUpon>NewList.xaml</DependentUpon>
     </Compile>

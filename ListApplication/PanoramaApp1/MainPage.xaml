@@ -22,7 +22,7 @@
             </phone:Pivot.RenderTransform>
             <phone:PivotItem CacheMode="{x:Null}" Header="Grocery Lists" Margin="12,28,-44,194">
                 <StackPanel>
-                    <TextBlock Text="Temp 1" FontSize="30"/>
+                    <TextBlock x:Name="tbTemp" Text="Temp 1" FontSize="30"/>
                     <TextBlock Text="Temp 2" FontSize="30"/>
                 </StackPanel>
             </phone:PivotItem>

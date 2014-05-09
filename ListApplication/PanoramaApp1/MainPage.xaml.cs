@@ -10,9 +10,10 @@ using Microsoft.Phone.Shell;
 
 namespace PanoramaApp1
 {
-   
+ 
     public partial class MainPage : PhoneApplicationPage
     {
+        
         // Constructor
         public MainPage()
         {
@@ -29,7 +30,16 @@ namespace PanoramaApp1
             {
                 App.ViewModel.LoadData();
             }
-        }
+            if (myGlobals.ListofItems.Count==0)
+            {
+                tbTemp.Text = "empty";
+            }
+            else
+            {
+                tbTemp.Text = myGlobals.ListofItems[0];
+            }
+     
+    }
 
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
         {
