@@ -30,13 +30,21 @@ namespace PanoramaApp1
             {
                 App.ViewModel.LoadData();
             }
-            if (myGlobals.ListofItems.Count==0)
-            {
-                tbTemp.Text = "empty";
-            }
+            //Runs everytime program loads, 
+            if (myGlobals.ListofItems.Count == 0) { }
             else
             {
-                tbTemp.Text = myGlobals.ListofItems[0];
+                
+              for(int x=0; x<(myGlobals.ListofItems.Count);x++)
+              {
+                  TextBlock ListColumn = new TextBlock();
+                  ListColumn.FontSize = 30;
+                  ListColumn.Name = x.ToString();
+                  ListColumn.Text = myGlobals.ListofItems[x];
+                  
+                  ListNamePanel.Children.Add(ListColumn);
+              }
+               // tbTemp.Text = myGlobals.ListofItems[0];
             }
      
     }
