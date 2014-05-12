@@ -9,5 +9,6 @@ namespace PanoramaApp1
     class myGlobals
     {
         public static List<string> ListofItems = new List<string>();
+        public static string CurrentList;
     }
 }

@@ -27,5 +27,7 @@ namespace PanoramaApp1
            NavigationService.Navigate(new Uri("/MainPage.xaml",UriKind.Relative));
           
         }
+
+  
     }
 }

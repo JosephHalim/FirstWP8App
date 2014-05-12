@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Input;
 
 namespace PanoramaApp1
 {
@@ -38,11 +39,15 @@ namespace PanoramaApp1
               for(int x=0; x<(myGlobals.ListofItems.Count);x++)
               {
                   TextBlock ListColumn = new TextBlock();
+                  {
                   ListColumn.FontSize = 30;
                   ListColumn.Name = x.ToString();
                   ListColumn.Text = myGlobals.ListofItems[x];
-                  
+                  };
+                  ListColumn.Tap += new EventHandler<GestureEventArgs>(HandleTap);
+                
                   ListNamePanel.Children.Add(ListColumn);
+                  
               }
                // tbTemp.Text = myGlobals.ListofItems[0];
             }
@@ -62,5 +67,21 @@ namespace PanoramaApp1
         {
             NavigationService.Navigate(new Uri("/NewList.xaml", UriKind.Relative));
         }
+
+       void HandleTap(Object sender, GestureEventArgs e)
+        {
+
+            object ListName = sender.GetType();//.GetProperty("Name", typeof(string)).ToString();
+         TextBlock tb= new TextBlock();
+           tb = (TextBlock)sender;
+           string hold = tb.Text;
+           MessageBox.Show(hold);
+           
+        }
+
+        void HandleHold(object sender, GestureEventArgs e)
+       {
+
+       }
     }
 }
