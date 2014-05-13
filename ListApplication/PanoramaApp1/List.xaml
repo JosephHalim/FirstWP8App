@@ -23,7 +23,7 @@
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel Grid.Row="0" Margin="12,17,0,28">
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="List Name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="List Name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Name="Title"/>
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
@@ -32,9 +32,9 @@
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Add List"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Sort"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Delete Selected"/>
+            <shell:ApplicationBarIconButton Click ="Add_New_Item" IconUri="Assets/Images/add.png" Text="Add List"/>
+            <shell:ApplicationBarIconButton Click ="Sort_Data" IconUri="Assets/Images/folder.png" Text="Sort"/>
+            <shell:ApplicationBarIconButton Click ="Delete_List"  IconUri="Assets/Images/cancel.png" Text="Delete Selected"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

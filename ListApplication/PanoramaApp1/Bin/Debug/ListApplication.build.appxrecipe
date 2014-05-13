@@ -40,6 +40,9 @@
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\cancel.png">
       <PackagePath>Assets\Images\cancel.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\folder.png">
+      <PackagePath>Assets\Images\folder.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
