@@ -1,11 +1,14 @@
-﻿<xapCache source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/11/2014 7:29:16 PM">
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="5/11/2014 7:58:40 AM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\PanoramaApp1.dll" archivePath="PanoramaApp1.dll" lastWriteTime="5/11/2014 7:29:16 PM" />
+﻿<xapCache source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/13/2014 8:02:16 AM">
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="5/13/2014 7:47:20 AM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\PanoramaApp1.dll" archivePath="PanoramaApp1.dll" lastWriteTime="5/13/2014 8:02:16 AM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Cancel.png" archivePath="Toolkit.Content\ApplicationBar.Cancel.png" lastWriteTime="5/12/2014 9:29:12 PM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Check.png" archivePath="Toolkit.Content\ApplicationBar.Check.png" lastWriteTime="5/12/2014 9:29:12 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\check.png" archivePath="Assets\Images\check.png" lastWriteTime="5/8/2014 7:13:10 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\add.png" archivePath="Assets\Images\add.png" lastWriteTime="11/26/2013 2:03:08 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\AlignmentGrid.png" archivePath="Assets\AlignmentGrid.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\BadgeLogo.png" archivePath="Assets\BadgeLogo.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\cancel.png" archivePath="Assets\Images\cancel.png" lastWriteTime="5/8/2014 7:13:17 PM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\folder.png" archivePath="Assets\Images\folder.png" lastWriteTime="5/12/2014 6:55:03 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Logo.png" archivePath="Assets\Logo.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\SplashScreen.png" archivePath="Assets\SplashScreen.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\SquareTile150x150.png" archivePath="Assets\SquareTile150x150.png" lastWriteTime="4/28/2014 8:18:01 PM" />
@@ -16,11 +19,12 @@
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Tiles\FlipCycleTileSmall.png" archivePath="Assets\Tiles\FlipCycleTileSmall.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Tiles\IconicTileMediumLarge.png" archivePath="Assets\Tiles\IconicTileMediumLarge.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Tiles\IconicTileSmall.png" archivePath="Assets\Tiles\IconicTileSmall.png" lastWriteTime="4/28/2014 8:18:01 PM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="5/8/2014 8:23:38 AM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="5/13/2014 8:02:16 AM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Assets\ApplicationIcon.png" archivePath="Assets\ApplicationIcon.png" lastWriteTime="4/28/2014 8:18:01 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Assets\Tiles\FlipCycleTileMedium.png" archivePath="Assets\Tiles\FlipCycleTileMedium.png" lastWriteTime="4/28/2014 8:18:01 PM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll" archivePath="Coding4Fun.Toolkit.Controls.dll" lastWriteTime="5/12/2014 9:29:12 PM" />
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="3/22/2014 11:54:10 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="4/28/2014 8:18:10 PM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="5/11/2014 7:29:16 PM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="5/11/2014 7:58:40 AM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="5/13/2014 8:02:16 AM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="5/13/2014 7:47:21 AM" />
 </xapCache>

@@ -19,8 +19,17 @@
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1.dll">
       <PackagePath>PanoramaApp1.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\Coding4Fun.Toolkit.Controls.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Controls.dll">
+      <PackagePath>Coding4Fun.Toolkit.Controls.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll">
       <PackagePath>Microsoft.Phone.Controls.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Cancel.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Check.png">
+      <PackagePath>Toolkit.Content\ApplicationBar.Check.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\check.png">
       <PackagePath>Assets\Images\check.png</PackagePath>
@@ -39,6 +48,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\cancel.png">
       <PackagePath>Assets\Images\cancel.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Images\folder.png">
+      <PackagePath>Assets\Images\folder.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>

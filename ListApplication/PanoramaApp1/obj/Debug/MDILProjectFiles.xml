@@ -3,11 +3,14 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>PanoramaApp1.dll</File>
+    <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
+    <File>Toolkit.Content\ApplicationBar.Check.png</File>
     <File>Assets\Images\check.png</File>
     <File>Assets\Images\add.png</File>
     <File>Assets\AlignmentGrid.png</File>
     <File>Assets\BadgeLogo.png</File>
     <File>Assets\Images\cancel.png</File>
+    <File>Assets\Images\folder.png</File>
     <File>Assets\Logo.png</File>
     <File>Assets\SplashScreen.png</File>
     <File>Assets\SquareTile150x150.png</File>
@@ -21,6 +24,7 @@
     <File>AppManifest.xaml</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Coding4Fun.Toolkit.Controls.dll</File>
     <File>Microsoft.Phone.Controls.dll</File>
     <File>WMAppManifest.xml</File>
     <File>MDILProjectFiles.xml</File>

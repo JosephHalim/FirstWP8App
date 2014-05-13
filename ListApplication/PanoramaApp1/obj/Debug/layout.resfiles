@@ -4,6 +4,7 @@ Assets\BadgeLogo.png
 Assets\Images\add.png
 Assets\Images\cancel.png
 Assets\Images\check.png
+Assets\Images\folder.png
 Assets\Logo.png
 Assets\SplashScreen.png
 Assets\SquareTile150x150.png
@@ -15,3 +16,5 @@ Assets\Tiles\FlipCycleTileSmall.png
 Assets\Tiles\IconicTileMediumLarge.png
 Assets\Tiles\IconicTileSmall.png
 Assets\WideLogo.png
+Toolkit.Content\ApplicationBar.Cancel.png
+Toolkit.Content\ApplicationBar.Check.png
