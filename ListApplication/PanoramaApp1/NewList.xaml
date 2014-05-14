@@ -15,8 +15,12 @@
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="23*"/>
+        </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Left" Margin="10,29,0,0" TextWrapping="Wrap" Text="Name the new list" VerticalAlignment="Top" Width="191" Height="63"/>
-        <TextBox x:Name="txbNewList" HorizontalAlignment="Left" Height="72" Margin="10,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="456" />
+        <TextBox x:Name="txbNewList" HorizontalAlignment="Left" Height="72" Margin="10,68,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="456" Grid.ColumnSpan="2" />
 
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
@@ -25,4 +29,6 @@
             <shell:ApplicationBarIconButton IconUri="/Assets/Images/cancel.png" Text="Cancel"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
+
+
 </phone:PhoneApplicationPage>

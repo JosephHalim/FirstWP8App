@@ -38,3 +38,4 @@ C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\De
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\XapCacheFile.xml
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Coding4Fun.Toolkit.Controls.dll
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\NewItem.g.cs
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\NewList.g.cs

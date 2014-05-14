@@ -30,11 +30,15 @@
         <Grid x:Name="ContentPanel" Grid.Row="1"/>
         <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="12,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
+ 
     <phone:PhoneApplicationPage.ApplicationBar>
+
         <shell:ApplicationBar Mode="Default" IsVisible="True" IsMenuEnabled="True">
             <shell:ApplicationBarIconButton Click ="Add_New_Item" IconUri="Assets/Images/add.png" Text="Add List"/>
             <shell:ApplicationBarIconButton  Click ="SortData" IconUri="Assets/Images/folder.png" Text="Sort"/>
             <shell:ApplicationBarIconButton Click ="DeleteList"  IconUri="Assets/Images/cancel.png" Text="Delete Selected"/>
+        
+       
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

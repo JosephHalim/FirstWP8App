@@ -29,11 +29,16 @@ namespace PanoramaApp1
         {
 
         }
-      private  void Add_New_Item(object sender, EventArgs e)
+
+     
+
+        void Add_New_Item(object sender, EventArgs e)
+
         {
             var popup = new Popup();
             
       //  NewItem control = new AddNewControl();
+
 
         }
       private void DeleteList(object sender, EventArgs e)
@@ -45,6 +50,12 @@ namespace PanoramaApp1
 
       }
         
+
+            
+
+
+
+        }
+
     }
 
-}

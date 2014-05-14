@@ -16,11 +16,13 @@ namespace PanoramaApp1
         {
             InitializeComponent();
         }
+
         void Accept(object sender, EventArgs e)
         {
         }
         void Cancel(object sender, EventArgs e)
         { }
         
+
     }
 }

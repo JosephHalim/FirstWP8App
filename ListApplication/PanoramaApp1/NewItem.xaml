@@ -10,8 +10,11 @@
     <Popup Name="AddNewControl">
         <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
             <TextBox Name ="ItemName" HorizontalAlignment="Left" Height="72" Margin="11,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456"/>
+
             <Button  x:Name ="AcceptText" Content="Accept"  HorizontalAlignment="Left" Margin="11,213,0,0" VerticalAlignment="Top" Width="213"/>
             <Button  x:Name="CancelText" Content="Cancel"  HorizontalAlignment="Left" Margin="254,213,0,0" VerticalAlignment="Top" Width="213"/>
+
+
             <TextBlock HorizontalAlignment="Left" Margin="29,10,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top"/>
             <TextBlock HorizontalAlignment="Left" Margin="29,114,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top"/>
             <TextBox Name="Quantity" HorizontalAlignment="Left" Height="72" Margin="11,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456" />
