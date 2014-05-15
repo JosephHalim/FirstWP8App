@@ -3,8 +3,13 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>PanoramaApp1.dll</File>
+    <File>ReadMe.Coding4Fun.Toolkit.txt</File>
+    <File>README_FIRST.txt</File>
+    <File>Toolkit.Content\ApplicationBar.Add.png</File>
     <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
     <File>Toolkit.Content\ApplicationBar.Check.png</File>
+    <File>Toolkit.Content\ApplicationBar.Delete.png</File>
+    <File>Toolkit.Content\ApplicationBar.Select.png</File>
     <File>Assets\Images\check.png</File>
     <File>Assets\Images\add.png</File>
     <File>Assets\AlignmentGrid.png</File>
@@ -24,8 +29,12 @@
     <File>AppManifest.xaml</File>
     <File>Assets\ApplicationIcon.png</File>
     <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Coding4Fun.Toolkit.Audio.dll</File>
     <File>Coding4Fun.Toolkit.Controls.dll</File>
+    <File>Coding4Fun.Toolkit.Net.dll</File>
+    <File>Coding4Fun.Toolkit.Storage.dll</File>
     <File>Microsoft.Phone.Controls.dll</File>
+    <File>Microsoft.Phone.Controls.Toolkit.dll</File>
     <File>WMAppManifest.xml</File>
     <File>MDILProjectFiles.xml</File>
     <File>AppxManifest.xml</File>

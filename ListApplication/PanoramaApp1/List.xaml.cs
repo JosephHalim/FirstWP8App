@@ -8,8 +8,9 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-
+using Coding4Fun.Toolkit.Controls;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace PanoramaApp1
 {
@@ -30,32 +31,32 @@ namespace PanoramaApp1
 
         }
 
-     
+
 
         void Add_New_Item(object sender, EventArgs e)
-
         {
-            var popup = new Popup();
-            
-      //  NewItem control = new AddNewControl();
+
+          //  var messageDialog = new MessageDialog("Enter New Item");
+
+            //  NewItem control = new AddNewControl();
 
 
         }
-      private void DeleteList(object sender, EventArgs e)
+        private void DeleteList(object sender, EventArgs e)
         {
-            string hold= "text";
+
         }
-     private    void SortData(object sender, EventArgs e)
-      {
-
-      }
-        
-
-            
-
-
+        private void SortData(object sender, EventArgs e)
+        {
 
         }
 
+
+
+
+
+
+      
+    }
     }
 

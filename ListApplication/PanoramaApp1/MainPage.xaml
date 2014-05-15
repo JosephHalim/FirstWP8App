@@ -11,28 +11,28 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait"  Orientation="Portrait"
+    SupportedOrientations="Portrait" Orientation="Portrait"
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent" >
-        <phone:Pivot HorizontalAlignment="Left" Height="797.457"  VerticalAlignment="Top" Width="477.531" RenderTransformOrigin="0.5,0.5" Margin="0.994,-0.994,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto" Loaded="Pivot_Loaded">
+        <phone:Pivot HorizontalAlignment="Left" Height="797.457" VerticalAlignment="Top" Width="477.531" RenderTransformOrigin="0.5,0.5" Margin="0.994,-0.994,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto" Loaded="Pivot_Loaded">
             <phone:Pivot.RenderTransform>
                 <CompositeTransform Rotation="-0.272"/>
             </phone:Pivot.RenderTransform>
             <phone:PivotItem CacheMode="{x:Null}" Header="Grocery Lists" Margin="12,28,-44,194">
                 <StackPanel Name="ListNamePanel">
-                            <!-- Tap="HandleTap"> -->
-                    
-                        <!-- ManipulationStarted="ListNamePanel_ManipulationStarted"
-                            ManipulationCompleted="ListNamePanel_ManipulationCompleted"-->
+                    <!-- Tap="HandleTap"> -->
+
+                    <!-- ManipulationStarted="ListNamePanel_ManipulationStarted"
+ManipulationCompleted="ListNamePanel_ManipulationCompleted"-->
 
 
 
 
-                  
-                    <!--  <TextBlock x:Name="tbTemp" Text="Temp 1" FontSize="30"/>
-                    <TextBlock Text="Temp 2" FontSize="30"/>-->
+
+                    <!-- <TextBlock x:Name="tbTemp" Text="Temp 1" FontSize="30"/>
+<TextBlock Text="Temp 2" FontSize="30"/>-->
                 </StackPanel>
             </phone:PivotItem>
             <phone:PivotItem CacheMode="{x:Null}" Header="Settings ">
@@ -45,8 +45,9 @@
         </phone:Pivot>
     </Grid>
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar Mode="Default" Opacity="1.0" IsVisible="True" IsMenuEnabled="True"> <!-- for icons under C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Icons-->
-            <shell:ApplicationBarIconButton Click="Add_New_Item"  IconUri="/Assets/Images/add.png" Text="Add List"/>
+        <shell:ApplicationBar Mode="Default" Opacity="1.0" IsVisible="True" IsMenuEnabled="True">
+            <!-- for icons under C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.0\Icons-->
+            <shell:ApplicationBarIconButton Click="Add_New_Item" IconUri="/Assets/Images/add.png" Text="Add List"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 </phone:PhoneApplicationPage>

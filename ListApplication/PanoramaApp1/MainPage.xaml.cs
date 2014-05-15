@@ -31,12 +31,12 @@ namespace PanoramaApp1
             {
                 App.ViewModel.LoadData();
             }
-            //Runs everytime program loads, 
+            //Runs everytime program loads,
             if (myGlobals.ListofItems.Count == 0) { }
             else
             {
                 //Remove Past TextBlocks
-        //     foreach(TextBlock c in ListNamePanel)
+        // foreach(TextBlock c in ListNamePanel)
 
                 ListNamePanel.Children.Clear();
 
@@ -49,7 +49,7 @@ namespace PanoramaApp1
                             ListColumn.Name = x.ToString();
                             ListColumn.Text = myGlobals.ListofItems[x];
                         };
-                        ListColumn.Tap += new EventHandler<GestureEventArgs>(HandleTap);
+                        ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
 
                         ListNamePanel.Children.Add(ListColumn);
 
@@ -73,7 +73,7 @@ namespace PanoramaApp1
             NavigationService.Navigate(new Uri("/NewList.xaml", UriKind.Relative));
         }
 
-       void HandleTap(Object sender, GestureEventArgs e)
+       void HandleTap(Object sender, EventArgs e)
         {
 
             
@@ -84,7 +84,7 @@ namespace PanoramaApp1
            NavigationService.Navigate(new Uri("/List.xaml", UriKind.Relative));
         }
 
-        void HandleHold(object sender, GestureEventArgs e)
+        void HandleHold(object sender, EventArgs e)
        {
 
        }
