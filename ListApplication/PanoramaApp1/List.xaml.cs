@@ -12,6 +12,7 @@ using Coding4Fun.Toolkit.Controls;
 using System.Windows.Input;
 using Windows.UI.Popups;
 
+
 namespace PanoramaApp1
 {
     public partial class Page1 : PhoneApplicationPage
@@ -35,12 +36,10 @@ namespace PanoramaApp1
 
         void Add_New_Item(object sender, EventArgs e)
         {
-
-          //  var messageDialog = new MessageDialog("Enter New Item");
-
-            //  NewItem control = new AddNewControl();
-
-
+            Popup popup = new Popup();
+            WindowsPhoneControl1 control = new WindowsPhoneControl1();
+            popup.Child = control;
+            popup.IsOpen = true;
         }
         private void DeleteList(object sender, EventArgs e)
         {

@@ -7,7 +7,7 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="289.68">
-    <Popup x:Name="AddNewControl">
+    <StackPanel x:Name="AddNewControl">
         <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}">
             <TextBox Name ="ItemName" HorizontalAlignment="Left" Height="72" Margin="11,42,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456"/>
 
@@ -20,5 +20,5 @@
             <TextBox Name="Quantity" HorizontalAlignment="Left" Height="72" Margin="11,141,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456" />
 
         </Grid>
-    </Popup>
+    </StackPanel>
 </UserControl>
