@@ -10,21 +10,21 @@ namespace PanoramaApp1
     class ListObject
     {
         private string ListName;
-        private string Item;
-        public ListObject( string name, string item)
+        private string Quantity;
+        public ListObject( string name, string quantity)
         {
             this.ListName = name;
-            this.Item = item;
+            this.Quantity = quantity;
         }
         public string Name
         {
             get { return ListName; }
             set { ListName = value; }
         }
-        public string ItemID
+        public string NumberofItems
         {
-            get { return Item; }
-            set { Item = value; }
+            get { return Quantity; }
+            set { Quantity = value; }
         }
     }
 }

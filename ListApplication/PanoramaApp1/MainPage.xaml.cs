@@ -30,17 +30,19 @@ namespace PanoramaApp1
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
+            
             }
+            
             //Runs everytime program loads,
             if (myGlobals.ListofItems.Count == 0) { }
             else
             {
                 //Remove Past TextBlocks
-        // foreach(TextBlock c in ListNamePanel)
+       
 
                 ListNamePanel.Children.Clear();
 
-                //Add TextBlock
+                //Add TextBlocks to ListColumn
                     for (int x = 0; x < (myGlobals.ListofItems.Count); x++)
                     {
                         TextBlock ListColumn = new TextBlock();
@@ -48,13 +50,15 @@ namespace PanoramaApp1
                             ListColumn.FontSize = 30;
                             ListColumn.Name = x.ToString();
                             ListColumn.Text = myGlobals.ListofItems[x];
+                            
                         };
+                        ListNamePanel.Children.Add(ListColumn);
                         ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
 
-                        ListNamePanel.Children.Add(ListColumn);
+                     
 
                     }
-               // tbTemp.Text = myGlobals.ListofItems[0];
+             
             }
      
     }
@@ -70,17 +74,18 @@ namespace PanoramaApp1
         }
         public void Add_New_Item(Object sender, EventArgs e)
         {
+            //Navigation to New List page
             NavigationService.Navigate(new Uri("/NewList.xaml", UriKind.Relative));
         }
 
        void HandleTap(Object sender, EventArgs e)
         {
 
-            
+            // on selected Textblock, move to that list
          TextBlock tb= new TextBlock();
            tb = (TextBlock)sender;
            myGlobals.CurrentList = tb.Text;
-          
+      
            NavigationService.Navigate(new Uri("/List.xaml", UriKind.Relative));
         }
 

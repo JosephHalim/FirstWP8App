@@ -13,10 +13,13 @@ using System.Windows.Input;
 using Windows.UI.Popups;
 
 
+
+
 namespace PanoramaApp1
 {
     public partial class Page1 : PhoneApplicationPage
     {
+        Popup popup = new Popup();
         public Page1()
         {
             InitializeComponent();
@@ -25,21 +28,31 @@ namespace PanoramaApp1
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             Title.Text = myGlobals.CurrentList;
-        }
+           
+          }
 
-        private void ApplicationBarIconButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+     
+        
 
         void Add_New_Item(object sender, EventArgs e)
         {
-            Popup popup = new Popup();
+          
             WindowsPhoneControl1 control = new WindowsPhoneControl1();
             popup.Child = control;
             popup.IsOpen = true;
+            control.AcceptText.Click += (s, args) =>
+                {
+                    string ProductName = control.ItemName.Text.ToString();
+                    string NumberofUnits = control.Quantity.Text.ToString();
+                    myGlobals.ListofObjects.Add(ProductName, NumberofUnits);
+                    popup.IsOpen= false;
+                    Update();
+                    
+                };
+            control.CancelText.Click += (s, args) =>
+                {
+                    popup.IsOpen = false;
+                };
         }
         private void DeleteList(object sender, EventArgs e)
         {
@@ -50,7 +63,28 @@ namespace PanoramaApp1
 
         }
 
+        //run an update function, remove previous checkboxes. add new ones
+        public void Update()
+        {
+            ListofItems.Children.Clear();
+            int hold = 0;
+            foreach (KeyValuePair<string,string> item in myGlobals.ListofObjects)
+            {
+                hold++;
+                CheckBox AddNewList = new CheckBox();
+                AddNewList.Content = item.Key;
+                AddNewList.FontSize = 30;
+                AddNewList.Name = hold.ToString();
+                ListofItems.Children.Add(AddNewList);
+                   
+               
+               // ListNamePanel.Children.Add(ListColumn);
+              //  ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
 
+
+
+            }
+        }
 
 
 

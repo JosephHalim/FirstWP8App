@@ -22,14 +22,19 @@
         </Grid.RowDefinitions>
        
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+        <StackPanel Grid.Row="0" Margin="12,17,0,28" >
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="List Name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" x:Name="Title"/>
+            <StackPanel Name="ListofItems">
+                
+                
+            </StackPanel>
+          
+            <!-- <CheckBox C-->
         </StackPanel>
 
         <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1"/>
-        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Margin="12,10,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+   
     </Grid>
    
     <phone:PhoneApplicationPage.ApplicationBar>
