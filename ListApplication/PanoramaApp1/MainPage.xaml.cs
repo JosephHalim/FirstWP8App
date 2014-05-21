@@ -27,6 +27,7 @@ namespace PanoramaApp1
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            NavigationService.RemoveBackEntry();
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();

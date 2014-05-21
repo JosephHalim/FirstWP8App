@@ -25,6 +25,7 @@ namespace PanoramaApp1
             string hold = txbNewList.Text;
             myGlobals.ListofItems.Add(hold);
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+           
 
         }
 
