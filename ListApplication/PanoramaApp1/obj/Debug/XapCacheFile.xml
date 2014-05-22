@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-﻿<xapCache source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/21/2014 8:04:49 PM">
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="5/21/2014 8:02:46 PM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\PanoramaApp1.dll" archivePath="PanoramaApp1.dll" lastWriteTime="5/21/2014 8:04:48 PM" />
-=======
-﻿<xapCache source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/20/2014 8:26:16 AM">
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="5/20/2014 8:20:39 AM" />
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\PanoramaApp1.dll" archivePath="PanoramaApp1.dll" lastWriteTime="5/20/2014 8:26:15 AM" />
->>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
+﻿<xapCache source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\PanoramaApp1_Debug_AnyCPU.xap" wasSigned="False" wasTritonized="False" certificateThumbprint="" TimeStampUrl="" signKeyFile="" signKeyPassword="" lastWriteTime="5/21/2014 8:18:49 PM">
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\resources.pri" archivePath="resources.pri" lastWriteTime="5/21/2014 8:18:48 PM" />
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\PanoramaApp1.dll" archivePath="PanoramaApp1.dll" lastWriteTime="5/21/2014 8:18:48 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\ReadMe.Coding4Fun.Toolkit.txt" archivePath="ReadMe.Coding4Fun.Toolkit.txt" lastWriteTime="5/13/2014 7:38:57 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\README_FIRST.txt" archivePath="README_FIRST.txt" lastWriteTime="5/13/2014 10:41:56 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Add.png" archivePath="Toolkit.Content\ApplicationBar.Add.png" lastWriteTime="5/13/2014 10:41:56 PM" />
@@ -40,10 +34,6 @@
   <file source="C:\Program Files (x86)\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll" archivePath="Microsoft.Phone.Controls.dll" lastWriteTime="3/22/2014 11:54:10 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll" archivePath="Microsoft.Phone.Controls.Toolkit.dll" lastWriteTime="5/13/2014 10:41:52 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Properties\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="4/28/2014 8:18:10 PM" />
-<<<<<<< HEAD
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="5/21/2014 8:04:49 PM" />
-=======
-  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="5/20/2014 8:26:16 AM" />
->>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
+  <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\MDILProjectFiles.xml" archivePath="MDILProjectFiles.xml" lastWriteTime="5/21/2014 8:18:49 PM" />
   <file source="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\AppxManifest.xml" archivePath="AppxManifest.xml" lastWriteTime="5/17/2014 9:44:29 AM" />
 </xapCache>

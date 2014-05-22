@@ -27,7 +27,7 @@ namespace PanoramaApp1
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-<<<<<<< HEAD
+
            /* if (myGlobals.popuptext == true)
 =======
             NavigationService.RemoveBackEntry();

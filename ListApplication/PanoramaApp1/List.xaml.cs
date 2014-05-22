@@ -19,20 +19,16 @@ namespace PanoramaApp1
     public partial class Page1 : PhoneApplicationPage
     {
         Popup popup = new Popup();
-        
-        
-        
+        public Page1()
+        {
+            InitializeComponent();
+        }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-<<<<<<< HEAD
+
            
             //Update List Title and populate list
-          Title.Text = myGlobals.CurrentList.ToString();
-            
-=======
-            //Update List Title and populate list
-            Title.Text = myGlobals.CurrentList;
->>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
+          Title.Text = myGlobals.CurrentList;
             Update();
           }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -67,9 +63,9 @@ namespace PanoramaApp1
             
             
         }
-        protected override void OnBackKeyPress(CancelEventArgs e)
+      protected override void OnBackKeyPress(CancelEventArgs e)
         {
-           /* if (popup.IsOpen == true)
+            if (popup.IsOpen == true)
             {
                 popup.IsOpen = false;
                // myGlobals.popuptext = true;
@@ -77,7 +73,7 @@ namespace PanoramaApp1
             }
             else
             { return; }
-            */}
+            }
 
         private void DeleteList(object sender, EventArgs e)
         {
@@ -91,10 +87,9 @@ namespace PanoramaApp1
         //run an update function, remove previous checkboxes. add new ones
         public void Update()
         {
-<<<<<<< HEAD
+
             popup.IsOpen = false;
-=======
->>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
+
             //clears previous content
             ListofItems.Children.Clear();
             int hold = 0;
