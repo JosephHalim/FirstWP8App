@@ -8,10 +8,9 @@ using System.Windows.Controls.Primitives;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using Coding4Fun.Toolkit.Controls;
 using System.Windows.Input;
 using Windows.UI.Popups;
-
+using System.ComponentModel;
 
 
 
@@ -20,17 +19,22 @@ namespace PanoramaApp1
     public partial class Page1 : PhoneApplicationPage
     {
         Popup popup = new Popup();
-        public Page1()
-        {
-            InitializeComponent();
-        }
-
+        
+        
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            Title.Text = myGlobals.CurrentList;
            
+            //Update List Title and populate list
+          Title.Text = myGlobals.CurrentList.ToString();
+            
+            Update();
           }
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            
 
+        }
      
         
 
@@ -40,6 +44,7 @@ namespace PanoramaApp1
             WindowsPhoneControl1 control = new WindowsPhoneControl1();
             popup.Child = control;
             popup.IsOpen = true;
+            //Adds function to the accept text button
             control.AcceptText.Click += (s, args) =>
                 {
                     string ProductName = control.ItemName.Text.ToString();
@@ -47,13 +52,28 @@ namespace PanoramaApp1
                     myGlobals.ListofObjects.Add(ProductName, NumberofUnits);
                     popup.IsOpen= false;
                     Update();
-                    
                 };
+            //Adds control to cancel button
             control.CancelText.Click += (s, args) =>
                 {
                     popup.IsOpen = false;
                 };
+            
+            
+            
         }
+        protected override void OnBackKeyPress(CancelEventArgs e)
+        {
+           /* if (popup.IsOpen == true)
+            {
+                popup.IsOpen = false;
+               // myGlobals.popuptext = true;
+              
+            }
+            else
+            { return; }
+            */}
+
         private void DeleteList(object sender, EventArgs e)
         {
 
@@ -66,30 +86,22 @@ namespace PanoramaApp1
         //run an update function, remove previous checkboxes. add new ones
         public void Update()
         {
+            popup.IsOpen = false;
+            //clears previous content
             ListofItems.Children.Clear();
             int hold = 0;
+            //Populates List
             foreach (KeyValuePair<string,string> item in myGlobals.ListofObjects)
             {
                 hold++;
                 CheckBox AddNewList = new CheckBox();
-                AddNewList.Content = item.Key;
+                AddNewList.Content = item.Key + "                   " + item.Value;
                 AddNewList.FontSize = 30;
                 AddNewList.Name = hold.ToString();
                 ListofItems.Children.Add(AddNewList);
-                   
-               
-               // ListNamePanel.Children.Add(ListColumn);
-              //  ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
-
-
-
             }
         }
 
-
-
-
-      
     }
     }
 

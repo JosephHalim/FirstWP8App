@@ -11,7 +11,7 @@ namespace PanoramaApp1
     {
         public static List<string> ListofItems = new List<string>();
         public static Dictionary<string, string> ListofObjects = new Dictionary<string, string>();
-
+        //public static Boolean popuptext = false;
 
         public static string CurrentList;
     }

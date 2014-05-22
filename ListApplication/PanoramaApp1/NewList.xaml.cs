@@ -17,14 +17,14 @@ namespace PanoramaApp1
             InitializeComponent();
         }
 
-
-
+   
         public void Add_New_List(Object sender, EventArgs e)
         {
             //Add new List to the List Array
             string hold = txbNewList.Text;
             myGlobals.ListofItems.Add(hold);
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+           
 
         }
 

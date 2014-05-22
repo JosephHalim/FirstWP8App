@@ -27,22 +27,30 @@ namespace PanoramaApp1
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (!App.ViewModel.IsDataLoaded)
+           /* if (myGlobals.popuptext == true)
             {
-                App.ViewModel.LoadData();
-            
+                NavigationService.Navigate(new Uri("List.xaml",UriKind.Relative));
+
             }
-            
-            //Runs everytime program loads,
-            if (myGlobals.ListofItems.Count == 0) { }
             else
-            {
-                //Remove Past TextBlocks
-       
+            {*/
+                NavigationService.RemoveBackEntry();
+                if (!App.ViewModel.IsDataLoaded)
+                {
+                    App.ViewModel.LoadData();
 
-                ListNamePanel.Children.Clear();
+                }
 
-                //Add TextBlocks to ListColumn
+                //Runs everytime program loads,
+                if (myGlobals.ListofItems.Count == 0) { }
+                else
+                {
+                    //Remove Past TextBlocks
+
+
+                    ListNamePanel.Children.Clear();
+
+                    //Add TextBlocks to ListColumn
                     for (int x = 0; x < (myGlobals.ListofItems.Count); x++)
                     {
                         TextBlock ListColumn = new TextBlock();
@@ -50,17 +58,17 @@ namespace PanoramaApp1
                             ListColumn.FontSize = 30;
                             ListColumn.Name = x.ToString();
                             ListColumn.Text = myGlobals.ListofItems[x];
-                            
+
                         };
                         ListNamePanel.Children.Add(ListColumn);
                         ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
 
-                     
+
 
                     }
-             
-            }
-     
+
+                }
+            //}
     }
         
         private void Pivot_Loaded(object sender, RoutedEventArgs e)
@@ -85,7 +93,6 @@ namespace PanoramaApp1
          TextBlock tb= new TextBlock();
            tb = (TextBlock)sender;
            myGlobals.CurrentList = tb.Text;
-      
            NavigationService.Navigate(new Uri("/List.xaml", UriKind.Relative));
         }
 
