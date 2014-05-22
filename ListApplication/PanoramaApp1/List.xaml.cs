@@ -68,11 +68,11 @@ namespace PanoramaApp1
             if (popup.IsOpen == true)
             {
                 popup.IsOpen = false;
+                e.Cancel = true;
                // myGlobals.popuptext = true;
               
             }
-            else
-            { return; }
+           
             }
 
         private void DeleteList(object sender, EventArgs e)
