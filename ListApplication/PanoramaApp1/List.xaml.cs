@@ -24,10 +24,15 @@ namespace PanoramaApp1
         
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+<<<<<<< HEAD
            
             //Update List Title and populate list
           Title.Text = myGlobals.CurrentList.ToString();
             
+=======
+            //Update List Title and populate list
+            Title.Text = myGlobals.CurrentList;
+>>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
             Update();
           }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -86,7 +91,10 @@ namespace PanoramaApp1
         //run an update function, remove previous checkboxes. add new ones
         public void Update()
         {
+<<<<<<< HEAD
             popup.IsOpen = false;
+=======
+>>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
             //clears previous content
             ListofItems.Children.Clear();
             int hold = 0;

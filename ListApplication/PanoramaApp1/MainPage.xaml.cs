@@ -27,7 +27,12 @@ namespace PanoramaApp1
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+<<<<<<< HEAD
            /* if (myGlobals.popuptext == true)
+=======
+            NavigationService.RemoveBackEntry();
+            if (!App.ViewModel.IsDataLoaded)
+>>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
             {
                 NavigationService.Navigate(new Uri("List.xaml",UriKind.Relative));
 
