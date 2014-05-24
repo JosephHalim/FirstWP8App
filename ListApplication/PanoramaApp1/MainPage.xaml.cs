@@ -28,17 +28,7 @@ namespace PanoramaApp1
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-           /* if (myGlobals.popuptext == true)
-=======
-            NavigationService.RemoveBackEntry();
-            if (!App.ViewModel.IsDataLoaded)
->>>>>>> f3fc2ea63f5f2d520b61491b3bfae68ad9882df9
-            {
-                NavigationService.Navigate(new Uri("List.xaml",UriKind.Relative));
-
-            }
-            else
-            {*/
+                //removes back form, used for when navigating from Create NewList.xaml
                 NavigationService.RemoveBackEntry();
                 if (!App.ViewModel.IsDataLoaded)
                 {
@@ -73,7 +63,7 @@ namespace PanoramaApp1
                     }
 
                 }
-            //}
+           
     }
         
         private void Pivot_Loaded(object sender, RoutedEventArgs e)

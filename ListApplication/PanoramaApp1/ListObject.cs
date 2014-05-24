@@ -7,24 +7,32 @@ using System.Threading.Tasks;
 
 namespace PanoramaApp1
 {
-    class ListObject
+    public class ListObject
     {
-        private string ListName;
-        private string Quantity;
-        public ListObject( string name, string quantity)
+        
+        public string Quantity;
+        public string Group;
+        public string Name;
+        public ListObject(string name, string quantity, string group)
         {
-            this.ListName = name;
+            this.Name = name;
             this.Quantity = quantity;
+            this.Group = group;
         }
-        public string Name
+      public string NameofItem
         {
-            get { return ListName; }
-            set { ListName = value; }
+            get { return Name; }
+            set { Name = value;}
         }
         public string NumberofItems
         {
             get { return Quantity; }
             set { Quantity = value; }
+        }
+        public string GroupList
+        {
+            get { return Group; }
+            set { Group = value; }
         }
     }
 }

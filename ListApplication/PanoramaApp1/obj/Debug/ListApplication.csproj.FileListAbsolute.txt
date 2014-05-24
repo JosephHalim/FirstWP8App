@@ -145,6 +145,7 @@ C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\De
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\zh-TW\Microsoft.Phone.Controls.LocalizedResources.ControlResources.resw
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit.pri
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\qualifiers.txt
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\EditExistingItem.g.cs
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\layout.resfiles
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\layout.resfiles.intermediate
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\Resources.resfiles

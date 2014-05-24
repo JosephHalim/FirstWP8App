@@ -6,18 +6,21 @@
     mc:Ignorable="d"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
-    Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="350">
-    <StackPanel x:Name="AddNewControl" Height="400" Width=" 500">
-        <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}" Height="400" Margin="0,0,-32,0">
-            <TextBox x:Name ="ItemName" HorizontalAlignment="Left" Height="72" Margin="11,89,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456"/>
+    Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="450">
+    <StackPanel x:Name="AddNewControl" Height="600" Width=" 500">
+        <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}" Height="538" Margin="0,0,20,0">
+            <TextBox x:Name ="ItemName" HorizontalAlignment="Left" Height="72" Margin="11,64,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456"/>
 
-            <Button  Name ="AcceptText" Content="Accept"  HorizontalAlignment="Left" Margin="11,260,0,0" VerticalAlignment="Top" Width="213" Click="AcceptText_Click"/>
-            <Button  Name="CancelText" Content="Cancel"  HorizontalAlignment="Left" Margin="254,260,0,0" VerticalAlignment="Top" Width="213"/>
+            <Button  x:Name ="AcceptText" Content="Accept"  HorizontalAlignment="Left" Margin="11,342,0,0" VerticalAlignment="Top" Width="213" Click="AcceptText_Click"/>
+            <Button  x:Name="CancelText" Content="Cancel"  HorizontalAlignment="Left" Margin="254,344,0,0" VerticalAlignment="Top" Width="213"/>
 
 
-            <TextBlock HorizontalAlignment="Left" Margin="29,57,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top"/>
-            <TextBlock HorizontalAlignment="Left" Margin="29,161,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top"/>
-            <TextBox x:Name="Quantity" HorizontalAlignment="Left" Height="72" Margin="11,188,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456" />
+            <TextBlock HorizontalAlignment="Left" Margin="29,32,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,136,0,0" TextWrapping="Wrap" Text="Quantity" VerticalAlignment="Top"/>
+            <TextBox x:Name="Quantity" HorizontalAlignment="Left" Height="72" Margin="11,163,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456" />
+            <TextBlock HorizontalAlignment="Left" Margin="29,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Category"/>
+            <TextBox x:Name="Category" HorizontalAlignment="Left" Height="72" Margin="11,267,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="456" />
+
 
         </Grid>
     </StackPanel>

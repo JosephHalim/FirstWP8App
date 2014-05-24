@@ -50,7 +50,10 @@ namespace PanoramaApp1
                 {
                     string ProductName = control.ItemName.Text.ToString();
                     string NumberofUnits = control.Quantity.Text.ToString();
-                    myGlobals.ListofObjects.Add(ProductName, NumberofUnits);
+                    string group = control.Category.Text.ToString();
+                    //ListObject Item = new ListObject(ProductName, NumberofUnits, group);
+                  //  new ListObject(ProductName, NumberofUnits, group);
+                    myGlobals.ListofItemsinList.Add(new ListObject(ProductName,NumberofUnits,group));
                     popup.IsOpen= false;
                     Update();
                 };
@@ -65,14 +68,12 @@ namespace PanoramaApp1
         }
       protected override void OnBackKeyPress(CancelEventArgs e)
         {
+          //checks if popup is up, if it is, cancel the popup windows
             if (popup.IsOpen == true)
             {
                 popup.IsOpen = false;
                 e.Cancel = true;
-               // myGlobals.popuptext = true;
-              
             }
-           
             }
 
         private void DeleteList(object sender, EventArgs e)
@@ -94,11 +95,17 @@ namespace PanoramaApp1
             ListofItems.Children.Clear();
             int hold = 0;
             //Populates List
-            foreach (KeyValuePair<string,string> item in myGlobals.ListofObjects)
+         //   foreach (object in myGlobals.ListofItemsinList)
+             foreach(ListObject list in myGlobals.ListofItemsinList)
             {
+                 
+               // MessageBox.Show(list.ToString());
+                
                 hold++;
                 CheckBox AddNewList = new CheckBox();
-                AddNewList.Content = item.Key + "                   " + item.Value;
+               object text = (object)list;
+           AddNewList.Content = (list.NameofItem+ "                   " + list.NumberofItems);
+                 
                 AddNewList.FontSize = 30;
                 AddNewList.Name = hold.ToString();
                 ListofItems.Children.Add(AddNewList);
