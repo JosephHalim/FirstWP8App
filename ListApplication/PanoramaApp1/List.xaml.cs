@@ -33,8 +33,8 @@ namespace PanoramaApp1
           }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            
 
+            ListofItems.Children.Clear();
         }
      
         
@@ -62,9 +62,7 @@ namespace PanoramaApp1
                 {
                     popup.IsOpen = false;
                 };
-            
-            
-            
+                     
         }
       protected override void OnBackKeyPress(CancelEventArgs e)
         {
@@ -92,24 +90,47 @@ namespace PanoramaApp1
             popup.IsOpen = false;
 
             //clears previous content
-            ListofItems.Children.Clear();
+           ListofItems.Children.Clear();
+            TextColumn.Children.Clear();
+            CheckboxColumn.Children.Clear();
             int hold = 0;
+           
+            
+            
+             
             //Populates List
-         //   foreach (object in myGlobals.ListofItemsinList)
              foreach(ListObject list in myGlobals.ListofItemsinList)
             {
-                 
-               // MessageBox.Show(list.ToString());
-                
+  
                 hold++;
                 CheckBox AddNewList = new CheckBox();
                object text = (object)list;
-           AddNewList.Content = (list.NameofItem+ "                   " + list.NumberofItems);
-                 
+              TextBlock Content = new TextBlock();
+           Content.Text = (list.NameofItem+ "                   " + list.NumberofItems);                
                 AddNewList.FontSize = 30;
+                Content.FontSize = 30;
                 AddNewList.Name = hold.ToString();
-                ListofItems.Children.Add(AddNewList);
+                Content.Margin = new Thickness(15);
+                 
+                 Content.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
+           
+                //ListofItems.Children.Add(AddNewList);
+                ListofItems.ShowGridLines = true;
+             //   ListofItems.Children.Add(Content);
+               TextColumn.Children.Add(Content);
+              CheckboxColumn.Children.Add(AddNewList);
+                
             }
+             ListofItems.Children.Add(TextColumn);
+             ListofItems.Children.Add(CheckboxColumn);
+
+
+             
+        }
+        private void HandleTap(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("test");
         }
 
     }

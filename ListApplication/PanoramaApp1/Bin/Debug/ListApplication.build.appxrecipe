@@ -31,11 +31,23 @@
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\Coding4Fun.Toolkit.Storage.2.0.7\lib\windowsphone8\Coding4Fun.Toolkit.Storage.dll">
       <PackagePath>Coding4Fun.Toolkit.Storage.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\GalaSoft.MvvmLight.Extras.WP8.dll">
+      <PackagePath>GalaSoft.MvvmLight.Extras.WP8.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\GalaSoft.MvvmLight.WP8.dll">
+      <PackagePath>GalaSoft.MvvmLight.WP8.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Phone\v8.1\Libraries\Microsoft.Phone.Controls.dll">
       <PackagePath>Microsoft.Phone.Controls.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\WPtoolkit.4.2013.08.16\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll">
       <PackagePath>Microsoft.Phone.Controls.Toolkit.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\Microsoft.Practices.ServiceLocation.dll">
+      <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\System.Windows.Interactivity.dll">
+      <PackagePath>System.Windows.Interactivity.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\WPtoolkit.4.2013.08.16\lib\wp8\ar-SA\Microsoft.Phone.Controls.Toolkit.resources.dll">
       <PackagePath>ar-SA\Microsoft.Phone.Controls.Toolkit.resources.dll</PackagePath>
@@ -187,11 +199,14 @@
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\WPtoolkit.4.2013.08.16\lib\wp8\zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll">
       <PackagePath>zh-TW\Microsoft.Phone.Controls.Toolkit.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\ReadMe.Coding4Fun.Toolkit.txt">
-      <PackagePath>ReadMe.Coding4Fun.Toolkit.txt</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\GalaSoft.MvvmLight.Extras.WP8.xml">
+      <PackagePath>GalaSoft.MvvmLight.Extras.WP8.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\README_FIRST.txt">
-      <PackagePath>README_FIRST.txt</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\GalaSoft.MvvmLight.WP8.xml">
+      <PackagePath>GalaSoft.MvvmLight.WP8.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\packages\MvvmLightLibs.4.3.31.1\lib\wp8\Microsoft.Practices.ServiceLocation.xml">
+      <PackagePath>Microsoft.Practices.ServiceLocation.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Toolkit.Content\ApplicationBar.Add.png">
       <PackagePath>Toolkit.Content\ApplicationBar.Add.png</PackagePath>

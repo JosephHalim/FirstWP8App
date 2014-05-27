@@ -27,7 +27,6 @@ namespace PanoramaApp1
         // Load data for the ViewModel Items
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
                 //removes back form, used for when navigating from Create NewList.xaml
                 NavigationService.RemoveBackEntry();
                 if (!App.ViewModel.IsDataLoaded)
@@ -35,14 +34,11 @@ namespace PanoramaApp1
                     App.ViewModel.LoadData();
 
                 }
-
                 //Runs everytime program loads,
                 if (myGlobals.ListofItems.Count == 0) { }
                 else
                 {
                     //Remove Past TextBlocks
-
-
                     ListNamePanel.Children.Clear();
 
                     //Add TextBlocks to ListColumn
@@ -57,13 +53,8 @@ namespace PanoramaApp1
                         };
                         ListNamePanel.Children.Add(ListColumn);
                         ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
-
-
-
                     }
-
                 }
-           
     }
         
         private void Pivot_Loaded(object sender, RoutedEventArgs e)

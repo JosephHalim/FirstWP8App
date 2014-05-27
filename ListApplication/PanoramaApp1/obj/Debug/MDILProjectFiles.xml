@@ -3,8 +3,6 @@
   <XAPFiles>
     <File>resources.pri</File>
     <File>PanoramaApp1.dll</File>
-    <File>ReadMe.Coding4Fun.Toolkit.txt</File>
-    <File>README_FIRST.txt</File>
     <File>Toolkit.Content\ApplicationBar.Add.png</File>
     <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
     <File>Toolkit.Content\ApplicationBar.Check.png</File>
@@ -33,8 +31,15 @@
     <File>Coding4Fun.Toolkit.Controls.dll</File>
     <File>Coding4Fun.Toolkit.Net.dll</File>
     <File>Coding4Fun.Toolkit.Storage.dll</File>
+    <File>GalaSoft.MvvmLight.Extras.WP8.dll</File>
+    <File>GalaSoft.MvvmLight.WP8.dll</File>
     <File>Microsoft.Phone.Controls.dll</File>
     <File>Microsoft.Phone.Controls.Toolkit.dll</File>
+    <File>Microsoft.Practices.ServiceLocation.dll</File>
+    <File>System.Windows.Interactivity.dll</File>
+    <File>GalaSoft.MvvmLight.Extras.WP8.xml</File>
+    <File>GalaSoft.MvvmLight.WP8.xml</File>
+    <File>Microsoft.Practices.ServiceLocation.xml</File>
     <File>WMAppManifest.xml</File>
     <File>MDILProjectFiles.xml</File>
     <File>AppxManifest.xml</File>
