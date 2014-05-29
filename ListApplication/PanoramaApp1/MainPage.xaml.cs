@@ -35,6 +35,7 @@ namespace PanoramaApp1
 
                 }
                 //Runs everytime program loads,
+            
                 if (myGlobals.ListofItems.Count == 0) { }
                 else
                 {
@@ -42,13 +43,14 @@ namespace PanoramaApp1
                     ListNamePanel.Children.Clear();
 
                     //Add TextBlocks to ListColumn
-                    for (int x = 0; x < (myGlobals.ListofItems.Count); x++)
+                   // for (int x = 0; x < (myGlobals.ListofItems.Count); x++)
+                    foreach(KeyValuePair<string,List<object>> list in myGlobals.ListofItems)
                     {
                         TextBlock ListColumn = new TextBlock();
                         {
                             ListColumn.FontSize = 30;
-                            ListColumn.Name = x.ToString();
-                            ListColumn.Text = myGlobals.ListofItems[x];
+                            ListColumn.Name = list.Key.ToString();
+                            ListColumn.Text = list.Key;
 
                         };
                         ListNamePanel.Children.Add(ListColumn);
