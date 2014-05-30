@@ -13,5 +13,6 @@ namespace PanoramaApp1
      //   public static List<string> ListofItems = new List<string>();
         public static List<object> ListofItemsinList = new List<object>();
         public static string CurrentList;
+        
     }
 }

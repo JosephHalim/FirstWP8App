@@ -22,7 +22,7 @@ namespace PanoramaApp1
         {
             //Add new List to the List Array
             string hold = txbNewList.Text;
-            List<object> empty = null;
+            List<object> empty = new List<object>();
             myGlobals.ListofItems.Add(hold,empty);
             NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
            

@@ -81,6 +81,7 @@ namespace PanoramaApp1
          TextBlock tb= new TextBlock();
            tb = (TextBlock)sender;
            myGlobals.CurrentList = tb.Text;
+        
            NavigationService.Navigate(new Uri("/List.xaml", UriKind.Relative));
         }
 
