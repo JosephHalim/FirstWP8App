@@ -123,21 +123,22 @@ namespace PanoramaApp1
             }
             else
             {
-             
+               
                // foreach (ListObject list in myGlobals.ListofItemsinList)
                     foreach(ListObject list in myGlobals.ListofItemsinList)
                 {
 
-                    hold++;
+                    StackPanel Group = new StackPanel();
+                        
+                    // add checkbox       
                     CheckBox AddNewList = new CheckBox();
-                    object text = (object)list;
+                    AddNewList.FontSize = 30;
+                    AddNewList.Name = hold.ToString();
+
                     TextBlock Content = new TextBlock();
                     Content.Text = (list.NameofItem + "                   " + list.NumberofItems);
-                    AddNewList.FontSize = 30;
                     Content.FontSize = 30;
-                    AddNewList.Name = hold.ToString();
                     Content.Margin = new Thickness(15);
-
                     Content.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
 
                     //ListofItems.Children.Add(AddNewList);
@@ -159,9 +160,16 @@ namespace PanoramaApp1
             TextBlock hold = new TextBlock();
             hold = (TextBlock)sender;
             string[] split = hold.Text.Split(' ');
-            
-
-            MessageBox.Show(split[0]);
+            List<object> handle= new List<object>();
+            foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
+            {
+                if (list.Key == split[0])
+                {
+                    handle = list.Value;
+                    break;
+                }    
+            }
+            NavigationService.Navigate(new Uri("/NewItem.xaml", UriKind.Relative));
         }
 
     }

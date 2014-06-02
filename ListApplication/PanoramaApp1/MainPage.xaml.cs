@@ -56,6 +56,8 @@ namespace PanoramaApp1
                         ListNamePanel.Children.Add(ListColumn);
                         ListColumn.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
                     }
+
+                    
                 }
     }
         

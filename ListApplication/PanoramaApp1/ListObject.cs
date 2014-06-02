@@ -10,7 +10,7 @@ namespace PanoramaApp1
     public class ListObject
     {
         
-        public string Quantity;
+        public string Quantity; 
         public string Group;
         public string Name;
         public ListObject(string name, string quantity, string group)
