@@ -34,7 +34,7 @@ namespace PanoramaApp1
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
 
-            ListofItems.Children.Clear();
+            //ListofItems.Children.Clear();
         }
      
         
@@ -93,10 +93,10 @@ namespace PanoramaApp1
             popup.IsOpen = false;
 
             //clears previous content
-           ListofItems.Children.Clear();
-            TextColumn.Children.Clear();
-            CheckboxColumn.Children.Clear();
-           
+        //   ListofItems.Children.Clear();
+          //  TextColumn.Children.Clear();
+           // CheckboxColumn.Children.Clear();
+          List<ListObject> source = new List<ListObject>();
             foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
             {
                 if (list.Key == myGlobals.CurrentList)
@@ -109,10 +109,17 @@ namespace PanoramaApp1
                   
                 }
             }
-          
-            int hold = 0;
+          foreach(ListObject value in myGlobals.ListofItemsinList)
+          {
+             
+              source.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList));
+          }
+           
+            
             object hold2 = myGlobals.ListofItemsinList;
-
+            List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(source, (ListObject s) => { return s.GroupList; }, true);
+            ListData.ItemsSource = DataSource;
+            /*
 
          //   foreach (ListObject list in value)
             //Populates List
@@ -151,7 +158,7 @@ namespace PanoramaApp1
                 ListofItems.Children.Add(TextColumn);
                 ListofItems.Children.Add(CheckboxColumn);
             }
-
+            */
              
         }
         private void HandleTap(object sender, RoutedEventArgs e)

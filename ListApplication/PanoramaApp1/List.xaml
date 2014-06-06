@@ -13,7 +13,25 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
-
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="AddrBookItemTemplate">
+            <StackPanel VerticalAlignment="Top">
+                <TextBlock FontWeight="Bold"  Text="{Binding NameofItem}" />
+                <TextBlock Text="{Binding NumberofItems}" />
+                <TextBlock Text="{Binding GroupList}" />
+                 
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="AddrBookGroupHeaderTemplate">
+            <Border Background="Transparent" Padding="5">
+                <Border Background="{StaticResource PhoneAccentBrush}" BorderBrush="{StaticResource PhoneAccentBrush}" BorderThickness="2" Width="62" 
+         Height="62" Margin="0,0,18,0" HorizontalAlignment="Left">
+                    <TextBlock Text="{Binding Key}" Foreground="{StaticResource PhoneForegroundBrush}" FontSize="48" Padding="6" 
+            FontFamily="{StaticResource PhoneFontFamilySemiLight}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                </Border>
+            </Border>
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         
@@ -21,7 +39,7 @@
         <StackPanel  Margin="12,17,0,37" >
             <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
             <TextBlock Text="List Name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Name="Title"/>
-            <Grid Name="ListofItems" Grid.Column="2" Height="562">
+            <!--<Grid Name="ListofItems" Grid.Column="2" Height="562">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="300"  />
@@ -32,8 +50,16 @@
                 <StackPanel Grid.Column="1" Name="TextColumn" >
 
                 </StackPanel>
-            </Grid>
-           
+            </Grid>-->
+
+            <phone:LongListSelector x:Name="ListData"
+                                    
+  Background="Transparent"
+  GroupHeaderTemplate="{StaticResource AddrBookGroupHeaderTemplate}"
+  ItemTemplate="{StaticResource AddrBookItemTemplate}"
+  LayoutMode="List"
+  IsGroupingEnabled="true"
+  HideEmptyGroups ="true"/>
             <!-- <CheckBox C-->
         </StackPanel>
 

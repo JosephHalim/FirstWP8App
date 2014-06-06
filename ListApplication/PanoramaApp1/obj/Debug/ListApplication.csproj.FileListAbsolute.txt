@@ -155,3 +155,11 @@ C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\De
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\GalaSoft.MvvmLight.WP8.pdb
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\GalaSoft.MvvmLight.WP8.xml
 C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\Bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\layout.resfiles
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\layout.resfiles.intermediate
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\Resources.resfiles
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\Resources.resfiles.intermediate
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\pri.resfiles
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\pri.resfiles.intermediate
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\priconfig.xml
+C:\Users\Joseph\Documents\GitHub\FirstWP8App\ListApplication\PanoramaApp1\obj\Debug\Microsoft.Phone.Controls.Toolkit\priconfig.xml.intermediate
