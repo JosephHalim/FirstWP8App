@@ -28,7 +28,8 @@ namespace PanoramaApp1
 
            
             //Update List Title and populate list
-          Title.Text = myGlobals.CurrentList;
+         
+          ListHeader.Header = myGlobals.CurrentList;
             Update();
           }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -177,6 +178,11 @@ namespace PanoramaApp1
                 }    
             }
             NavigationService.Navigate(new Uri("/NewItem.xaml", UriKind.Relative));
+        }
+        private void HandleEdit(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show("HandleEdit");
         }
 
     }
