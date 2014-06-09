@@ -26,23 +26,23 @@ namespace PanoramaApp1
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-           
+
             //Update List Title and populate list
-         
-          ListHeader.Header = myGlobals.CurrentList;
+
+            ListHeader.Header = myGlobals.CurrentList;
             Update();
-          }
+        }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
 
             //ListofItems.Children.Clear();
         }
-     
-        
+
+
 
         void Add_New_Item(object sender, EventArgs e)
         {
-          
+
             WindowsPhoneControl1 control = new WindowsPhoneControl1();
             popup.Child = control;
             popup.IsOpen = true;
@@ -52,13 +52,14 @@ namespace PanoramaApp1
                     string ProductName = control.ItemName.Text.ToString();
                     string NumberofUnits = control.Quantity.Text.ToString();
                     string group = control.Category.Text.ToString();
+                    bool incart = false;
                     //ListObject Item = new ListObject(ProductName, NumberofUnits, group);
-                  //  new ListObject(ProductName, NumberofUnits, group);
-                    
-                    myGlobals.ListofItemsinList.Add(new ListObject(ProductName, NumberofUnits, group)); 
+                    //  new ListObject(ProductName, NumberofUnits, group);
+
+                    myGlobals.ListofItemsinList.Add(new ListObject(ProductName, NumberofUnits, group, incart));
                     myGlobals.ListofItems[myGlobals.CurrentList] = myGlobals.ListofItemsinList;
-                  
-                    popup.IsOpen= false;
+
+                    popup.IsOpen = false;
                     Update();
                 };
             //Adds control to cancel button
@@ -66,17 +67,17 @@ namespace PanoramaApp1
                 {
                     popup.IsOpen = false;
                 };
-                     
+
         }
-      protected override void OnBackKeyPress(CancelEventArgs e)
+        protected override void OnBackKeyPress(CancelEventArgs e)
         {
-          //checks if popup is up, if it is, cancel the popup windows
+            //checks if popup is up, if it is, cancel the popup windows
             if (popup.IsOpen == true)
             {
                 popup.IsOpen = false;
                 e.Cancel = true;
             }
-            }
+        }
 
         private void DeleteList(object sender, EventArgs e)
         {
@@ -90,14 +91,10 @@ namespace PanoramaApp1
         //run an update function, remove previous checkboxes. add new ones
         public void Update()
         {
-            
-            popup.IsOpen = false;
 
-            //clears previous content
-        //   ListofItems.Children.Clear();
-          //  TextColumn.Children.Clear();
-           // CheckboxColumn.Children.Clear();
-          List<ListObject> source = new List<ListObject>();
+            popup.IsOpen = false;
+            List<ListObject> NotInCart = new List<ListObject>();
+            List<ListObject> InsideCart = new List<ListObject>();
             foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
             {
                 if (list.Key == myGlobals.CurrentList)
@@ -105,62 +102,26 @@ namespace PanoramaApp1
                     myGlobals.ListofItemsinList = list.Value;
                     break;
                 }
+                else { }
+            }
+            foreach (ListObject value in myGlobals.ListofItemsinList)
+            {
+                if (value.InCart == false)
+                {
+                    NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
+                }
                 else
                 {
-                  
+                    InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
+
                 }
             }
-          foreach(ListObject value in myGlobals.ListofItemsinList)
-          {
-             
-              source.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList));
-          }
-           
-            
-            object hold2 = myGlobals.ListofItemsinList;
-            List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(source, (ListObject s) => { return s.GroupList; }, true);
+
+            List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
             ListData.ItemsSource = DataSource;
-            /*
+            List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
+            InsideCartData.ItemsSource = InsideCartSource;
 
-         //   foreach (ListObject list in value)
-            //Populates List
-            if (myGlobals.ListofItemsinList == null)
-            {
-                
-                myGlobals.ListofItemsinList.Add("text");
-            }
-            else
-            {
-               
-               // foreach (ListObject list in myGlobals.ListofItemsinList)
-                    foreach(ListObject list in myGlobals.ListofItemsinList)
-                {
-
-                    StackPanel Group = new StackPanel();
-                        
-                    // add checkbox       
-                    CheckBox AddNewList = new CheckBox();
-                    AddNewList.FontSize = 30;
-                    AddNewList.Name = hold.ToString();
-
-                    TextBlock Content = new TextBlock();
-                    Content.Text = (list.NameofItem + "                   " + list.NumberofItems);
-                    Content.FontSize = 30;
-                    Content.Margin = new Thickness(15);
-                    Content.Tap += new EventHandler<System.Windows.Input.GestureEventArgs>(HandleTap);
-
-                    //ListofItems.Children.Add(AddNewList);
-                    ListofItems.ShowGridLines = true;
-                    //   ListofItems.Children.Add(Content);
-                    TextColumn.Children.Add(Content);
-                    CheckboxColumn.Children.Add(AddNewList);
-
-                }
-                ListofItems.Children.Add(TextColumn);
-                ListofItems.Children.Add(CheckboxColumn);
-            }
-            */
-             
         }
         private void HandleTap(object sender, RoutedEventArgs e)
         {
@@ -168,14 +129,14 @@ namespace PanoramaApp1
             TextBlock hold = new TextBlock();
             hold = (TextBlock)sender;
             string[] split = hold.Text.Split(' ');
-            List<object> handle= new List<object>();
+            List<object> handle = new List<object>();
             foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
             {
                 if (list.Key == split[0])
                 {
                     handle = list.Value;
                     break;
-                }    
+                }
             }
             NavigationService.Navigate(new Uri("/NewItem.xaml", UriKind.Relative));
         }
@@ -184,7 +145,20 @@ namespace PanoramaApp1
 
             MessageBox.Show("HandleEdit");
         }
+        private void Checked(object sender, RoutedEventArgs e)
+        {
+            if (((CheckBox)sender).IsChecked == true)
+            {
+                MessageBox.Show("checked");
 
+                object hold = this.ListData.ItemsSource;
+                
+            }
+            else
+            {
+                MessageBox.Show("Not Checked");
+            }
+        }
     }
-    }
+}
 

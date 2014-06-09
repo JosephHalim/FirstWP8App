@@ -13,11 +13,17 @@ namespace PanoramaApp1
         public string Quantity; 
         public string Group;
         public string Name;
-        public ListObject(string name, string quantity, string group)
+        public bool InCart;
+        public ListObject(string name, string quantity, string group, bool incart)
         {
             this.Name = name;
             this.Quantity = quantity;
             this.Group = group;
+            this.InCart = incart;
+        }
+        public bool InsideCart {
+            get { return InCart; }
+            set { InCart = value; }
         }
       public string NameofItem
         {

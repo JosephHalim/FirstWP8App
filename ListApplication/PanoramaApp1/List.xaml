@@ -14,11 +14,11 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
     <phone:PhoneApplicationPage.Resources>
-        <DataTemplate x:Key="AddrBookItemTemplate">
+        <DataTemplate x:Key="AddrBookItemTemplate" >
             
-                <StackPanel Orientation="Horizontal">
-                    <CheckBox/>
-                    <StackPanel>
+                <StackPanel Orientation="Horizontal" Name="Testing" >
+                    <CheckBox Name="Checked"  Tap="Checked"/>
+                <StackPanel>
                     <TextBlock FontWeight="Bold"  Text="{Binding NameofItem}" Tap="HandleEdit" Width="{Binding ElementName=LayoutRoot,Path=ActualWidth}"/>
                     <TextBlock Text="{Binding NumberofItems}" Tap="HandleEdit" Width="{Binding ElementName=LayoutRoot,Path=ActualWidth}"/>
                         <!--<TextBlock Text="{Binding GroupList}" />-->
@@ -45,11 +45,6 @@
             <phone:PivotItem Header="ListHeader" Name="ListHeader" >
                 <!--TitlePanel contains the name of the application and page title-->
                 <StackPanel  Margin="12,17,0,37" >
-                    <!--<TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-                    <TextBlock Text="List Name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Name="Title"/>
-                    --><!--<Grid Name="ListofItems" Grid.Column="2" Height="562">
-                
-            </Grid>-->
                     <ScrollViewer>
                         <phone:LongListSelector x:Name="ListData"
                                    GroupHeaderTemplate="{StaticResource AddrBookGroupHeaderTemplate}"        
@@ -62,7 +57,17 @@
                 </StackPanel>
             </phone:PivotItem>
             <phone:PivotItem>
-                <TextBlock Text="Stuff"/>
+                <StackPanel  Margin="12,17,0,37" >
+                    <ScrollViewer>
+                        <phone:LongListSelector x:Name="InsideCartData"
+                                   GroupHeaderTemplate="{StaticResource AddrBookGroupHeaderTemplate}"        
+  Background="Transparent"
+  ItemTemplate="{StaticResource AddrBookItemTemplate}"
+  LayoutMode="List"
+  IsGroupingEnabled="true"
+  HideEmptyGroups ="true" />
+                    </ScrollViewer>
+                </StackPanel>
             </phone:PivotItem>
 
         </phone:Pivot>
