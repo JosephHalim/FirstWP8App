@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,6 +12,9 @@ using Microsoft.Phone.Shell;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using System.ComponentModel;
+
+
+
 
 
 
@@ -56,9 +60,9 @@ namespace PanoramaApp1
                     //ListObject Item = new ListObject(ProductName, NumberofUnits, group);
                     //  new ListObject(ProductName, NumberofUnits, group);
 
-                    myGlobals.ListofItemsinList.Add(new ListObject(ProductName, NumberofUnits, group, incart));
+                    myGlobals.ListofItemsinList.Add(new ListObject( ProductName,NumberofUnits,group, incart));
                     myGlobals.ListofItems[myGlobals.CurrentList] = myGlobals.ListofItemsinList;
-
+                 
                     popup.IsOpen = false;
                     Update();
                 };
@@ -95,7 +99,7 @@ namespace PanoramaApp1
             popup.IsOpen = false;
             List<ListObject> NotInCart = new List<ListObject>();
             List<ListObject> InsideCart = new List<ListObject>();
-            foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
+            foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
             {
                 if (list.Key == myGlobals.CurrentList)
                 {
@@ -110,7 +114,7 @@ namespace PanoramaApp1
                 {
                     NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
                 }
-                else
+               else
                 {
                     InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
 
@@ -119,7 +123,7 @@ namespace PanoramaApp1
 
             List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
             ListData.ItemsSource = DataSource;
-            List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
+          List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
             InsideCartData.ItemsSource = InsideCartSource;
 
         }
@@ -129,8 +133,8 @@ namespace PanoramaApp1
             TextBlock hold = new TextBlock();
             hold = (TextBlock)sender;
             string[] split = hold.Text.Split(' ');
-            List<object> handle = new List<object>();
-            foreach (KeyValuePair<string, List<object>> list in myGlobals.ListofItems)
+            List<ListObject> handle = new List<ListObject>();
+            foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
             {
                 if (list.Key == split[0])
                 {
@@ -151,8 +155,30 @@ namespace PanoramaApp1
             {
                 MessageBox.Show("checked");
 
-                object hold = this.ListData.ItemsSource;
+                string temp2 = "temp";
+                string name = "temp";
+                var hold = this.ListData.ItemsSource;
                 
+                foreach(List<ListObject> temp in hold)
+                {
+                     temp2 = temp[0].Group;
+                     name = temp[0].Name;
+                  //   var hold3 = temp3.Find(x => x == temp2);
+
+                    var hold4 = myGlobals.ListofItemsinList;
+                  
+                    foreach(object temp3 in hold4)
+                    {
+                        var d = temp3;
+                      //  myGlobals.ListofItemsinList.FindIndex(x => x.Group == IsHitTestVisible);
+                    }                    
+                    var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == temp2);
+                   
+                    
+                }
+
+
+            
             }
             else
             {

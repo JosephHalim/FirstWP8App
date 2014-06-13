@@ -32,7 +32,7 @@ namespace PanoramaApp1
         /// </summary>
         /// <param name="slg">The </param>
         /// <returns>Theitems source for a LongListSelector</returns>
-        private static List<AlphaKeyGroup<T>> CreateGroups(List<object> values)
+        private static List<AlphaKeyGroup<T>> CreateGroups(List<ListObject> values)
         {
             object hold = myGlobals.ListofItemsinList;
             List<AlphaKeyGroup<T>> list = new List<AlphaKeyGroup<T>>();
@@ -90,16 +90,7 @@ namespace PanoramaApp1
             }
           
                 
-            //}
-
-           /* if (sort)
-            {
-                foreach (AlphaKeyGroup<T> group in list)
-                {
-                    group.Sort((c0, c1) => { return ci.CompareInfo.Compare(getKey(c0), getKey(c1)); });
-                }
-            }*/
-
+         
             return list;
         }
 

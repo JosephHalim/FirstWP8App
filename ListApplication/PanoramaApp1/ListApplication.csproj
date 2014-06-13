@@ -114,6 +114,7 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\List.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="NewItem.xaml.cs">
       <DependentUpon>NewItem.xaml</DependentUpon>

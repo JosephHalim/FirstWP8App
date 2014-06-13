@@ -9,9 +9,9 @@ namespace PanoramaApp1
 {
     class myGlobals
     {
-        public static Dictionary<string,List<object>> ListofItems= new Dictionary<string,List<object>>();
+        public static Dictionary<string,List<ListObject>> ListofItems= new Dictionary<string,List<ListObject>>();
      //   public static List<string> ListofItems = new List<string>();
-        public static List<object> ListofItemsinList = new List<object>();
+        public static List<ListObject> ListofItemsinList = new List<ListObject>();
         public static string CurrentList;
         
     }

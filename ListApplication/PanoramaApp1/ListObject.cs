@@ -10,10 +10,10 @@ namespace PanoramaApp1
     public class ListObject
     {
         
-        public string Quantity; 
-        public string Group;
-        public string Name;
-        public bool InCart;
+        public string Quantity {get;set;}
+        public string Group { get; set; }
+        public string Name { get; set; }
+        public bool InCart { get; set; }
         public ListObject(string name, string quantity, string group, bool incart)
         {
             this.Name = name;

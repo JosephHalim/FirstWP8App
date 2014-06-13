@@ -44,7 +44,7 @@ namespace PanoramaApp1
 
                     //Add TextBlocks to ListColumn
                    // for (int x = 0; x < (myGlobals.ListofItems.Count); x++)
-                    foreach(KeyValuePair<string,List<object>> list in myGlobals.ListofItems)
+                    foreach(KeyValuePair<string,List<ListObject>> list in myGlobals.ListofItems)
                     {
                         TextBlock ListColumn = new TextBlock();
                         {
