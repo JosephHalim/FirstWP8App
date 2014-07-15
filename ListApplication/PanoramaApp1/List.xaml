@@ -17,7 +17,7 @@
         <DataTemplate x:Key="AddrBookItemTemplate" >
             
                 <StackPanel Orientation="Horizontal" Name="Testing" >
-                    <CheckBox Name="Checked"  Tap="Checked"  />
+                <CheckBox Name="Checked"  Tap="Checked" IsChecked="{Binding InsideCart, Mode=TwoWay}"/>
                 <StackPanel>
                     <TextBlock FontWeight="Bold"  Text="{Binding NameofItem}" Tap="HandleEdit" Width="{Binding ElementName=LayoutRoot,Path=ActualWidth}"/>
                     <TextBlock Text="{Binding NumberofItems}" Tap="HandleEdit" Width="{Binding ElementName=LayoutRoot,Path=ActualWidth}"/>

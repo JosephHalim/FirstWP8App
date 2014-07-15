@@ -123,9 +123,10 @@ namespace PanoramaApp1
 
             List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
             ListData.ItemsSource = DataSource;
+            ListData.UpdateLayout();
           List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
             InsideCartData.ItemsSource = InsideCartSource;
-
+            InsideCartData.UpdateLayout();
         }
         private void HandleTap(object sender, RoutedEventArgs e)
         {
@@ -148,42 +149,62 @@ namespace PanoramaApp1
         {
 
             MessageBox.Show("HandleEdit");
+
         }
+        
+      
         private void Checked(object sender, RoutedEventArgs e)
         {
-            if (((CheckBox)sender).IsChecked == true)
-            {
-                MessageBox.Show("checked");
 
-                string temp2 = "temp";
+            var hold = this.ListData.ItemsSource;
+                var hold2 = this.InsideCartData.ItemsSource;
+            
+            string temp2 = "temp";
                 string name = "temp";
-                var hold = this.ListData.ItemsSource;
+               //Something is goign wrong here.... 
+            // need to fix check
+               foreach(List<ListObject> temp in hold)
+               {
+                   if (temp.Count == 0)
+                   {
+                       hold = this.InsideCartData.ItemsSource;
+                   }
+               }
                 
-                foreach(List<ListObject> temp in hold)
+            
+              
+            //check if temp[0].Group = selected
+                foreach (List<ListObject> temp in hold)
                 {
-                     temp2 = temp[0].Group;
-                     name = temp[0].Name;
-                  //   var hold3 = temp3.Find(x => x == temp2);
+                    temp2 = temp[0].Group;
+                    name = temp[0].Name;
+                    //   var hold3 = temp3.Find(x => x == temp2);
 
                     var hold4 = myGlobals.ListofItemsinList;
-                  
-                    foreach(object temp3 in hold4)
+
+                    foreach (object temp3 in hold4)
                     {
                         var d = temp3;
-                      //  myGlobals.ListofItemsinList.FindIndex(x => x.Group == IsHitTestVisible);
-                    }                    
-                    var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == temp2);
-                   
+                    }
+                    var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == temp2 && ListObject.Name == name);
+                    var t3 = myGlobals.ListofItemsinList.FindIndex(ListObject => ListObject.Group == temp2 && ListObject.Name == name);
                     
+                    if (has.InCart == false)
+                    {
+                        ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, true);
+                        myGlobals.ListofItemsinList[t3] = holdlist;
+                    }
+                    else
+                    {
+                        ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, false);
+                        myGlobals.ListofItemsinList[t3] = holdlist;
+                    }
+                  
                 }
-
-
+               
+                Update();
             
-            }
-            else
-            {
-                MessageBox.Show("Not Checked");
-            }
+         
         }
     }
 }

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 
 namespace PanoramaApp1
 {
-    public class ListObject
+    public class ListObject : INotifyPropertyChanged
     {
-        
+        public event PropertyChangedEventHandler PropertyChanged;
         public string Quantity {get;set;}
         public string Group { get; set; }
         public string Name { get; set; }
@@ -23,7 +24,9 @@ namespace PanoramaApp1
         }
         public bool InsideCart {
             get { return InCart; }
-            set { InCart = value; }
+            set { InCart = value;
+     
+            }
         }
       public string NameofItem
         {
@@ -40,5 +43,6 @@ namespace PanoramaApp1
             get { return Group; }
             set { Group = value; }
         }
+      
     }
 }
