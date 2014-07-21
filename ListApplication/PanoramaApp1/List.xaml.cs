@@ -92,42 +92,7 @@ namespace PanoramaApp1
 
         }
 
-        //run an update function, remove previous checkboxes. add new ones
-        public void Update()
-        {
-
-            popup.IsOpen = false;
-            List<ListObject> NotInCart = new List<ListObject>();
-            List<ListObject> InsideCart = new List<ListObject>();
-            foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
-            {
-                if (list.Key == myGlobals.CurrentList)
-                {
-                    myGlobals.ListofItemsinList = list.Value;
-                    break;
-                }
-                else { }
-            }
-            foreach (ListObject value in myGlobals.ListofItemsinList)
-            {
-                if (value.InCart == false)
-                {
-                    NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
-                }
-               else
-                {
-                    InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
-
-                }
-            }
-
-            List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
-            ListData.ItemsSource = DataSource;
-            ListData.UpdateLayout();
-          List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
-            InsideCartData.ItemsSource = InsideCartSource;
-            InsideCartData.UpdateLayout();
-        }
+        
         private void HandleTap(object sender, RoutedEventArgs e)
         {
 
@@ -145,67 +110,142 @@ namespace PanoramaApp1
             }
             NavigationService.Navigate(new Uri("/NewItem.xaml", UriKind.Relative));
         }
+
         private void HandleEdit(object sender, RoutedEventArgs e)
         {
-
             MessageBox.Show("HandleEdit");
-
         }
-        
-      
+          
         private void Checked(object sender, RoutedEventArgs e)
         {
 
             var hold = this.ListData.ItemsSource;
                 var hold2 = this.InsideCartData.ItemsSource;
             
-            string temp2 = "temp";
-                string name = "temp";
+            
                //Something is goign wrong here.... 
             // need to fix check
-               foreach(List<ListObject> temp in hold)
-               {
-                   if (temp.Count == 0)
-                   {
-                       hold = this.InsideCartData.ItemsSource;
-                   }
-               }
-                
-            
-              
-            //check if temp[0].Group = selected
+                int count =0;
+                var FoundName = "temp";
+            var FoundGroup = "temp";
                 foreach (List<ListObject> temp in hold)
                 {
-                    temp2 = temp[0].Group;
-                    name = temp[0].Name;
-                    //   var hold3 = temp3.Find(x => x == temp2);
+                    do
+                    {
+                        //finds if data is in FirstList
+                        if (temp.Count > 0)
+                        {
+                            if (temp[count].InCart.ToString() == "True")
+                            {
+                                FoundName = temp[count].Name;
+                                FoundGroup = temp[count].Group;
+                                break;
+                            }
+                        }
+                        else // if data is not found change itemsource 
+                        {
+                            hold = this.InsideCartData.ItemsSource;
+                            count = -1;
+                        }
 
-                    var hold4 = myGlobals.ListofItemsinList;
-
-                    foreach (object temp3 in hold4)
+                        count++;
+                    } while (temp.Count > count);
+                    if (count==0)
                     {
-                        var d = temp3;
+                        hold = this.InsideCartData.ItemsSource;
+                        count = -1;
                     }
-                    var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == temp2 && ListObject.Name == name);
-                    var t3 = myGlobals.ListofItemsinList.FindIndex(ListObject => ListObject.Group == temp2 && ListObject.Name == name);
-                    
-                    if (has.InCart == false)
-                    {
-                        ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, true);
-                        myGlobals.ListofItemsinList[t3] = holdlist;
-                    }
-                    else
-                    {
-                        ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, false);
-                        myGlobals.ListofItemsinList[t3] = holdlist;
-                    }
-                  
                 }
-               
-                Update();
-            
-         
+            if (count == -1)
+            {
+                count = 0;
+                foreach (List<ListObject> temp in hold)
+                {
+                    do
+                    {
+                        //finds if data is in FirstList
+                        if (temp.Count > 0)
+                        {
+                            if (temp[count].InCart.ToString() == "False")
+                            {
+                                FoundName = temp[count].Name;
+                                FoundGroup = temp[count].Group;
+                                break;
+                            }
+                        }
+                        else // if data is not found change itemsource 
+                        {
+                            hold = this.InsideCartData.ItemsSource;
+                            count = -1;
+                        }
+
+                        count++;
+                    } while (temp.Count > count);
+                }
+            }
+
+                count = 0;
+
+                UpdateListData(FoundGroup, FoundName);
+                Update();       
         }
+
+ private void UpdateListData(string Group, string Name)
+        {
+            //check if temp[0].Group = selected
+            // separates data into two lists
+            var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == Group && ListObject.Name == Name);
+            var t3 = myGlobals.ListofItemsinList.FindIndex(ListObject => ListObject.Group == Group && ListObject.Name == Name);
+
+            if (has.InCart == false)
+            {
+                ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, true);
+                myGlobals.ListofItemsinList[t3] = holdlist;
+            }
+            else
+            {
+                ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, false);
+                myGlobals.ListofItemsinList[t3] = holdlist;
+            }
+        }
+ //run an update function, remove previous checkboxes. add new ones
+ public void Update()
+ {
+
+     popup.IsOpen = false;
+     List<ListObject> NotInCart = new List<ListObject>();
+     List<ListObject> InsideCart = new List<ListObject>();
+     foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
+     {
+         if (list.Key == myGlobals.CurrentList)
+         {
+             myGlobals.ListofItemsinList = list.Value;
+             break;
+         }
+         else { }
+     }
+     foreach (ListObject value in myGlobals.ListofItemsinList)
+     {
+         if (value.InCart == false)
+         {
+             NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
+         }
+         else
+         {
+             InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
+
+         }
+     }
+
+     List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
+     ListData.ItemsSource = DataSource;
+     ListData.UpdateLayout();
+     List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
+     InsideCartData.ItemsSource = InsideCartSource;
+     InsideCartData.UpdateLayout();
+ }
     }
+    
+
 }
 
