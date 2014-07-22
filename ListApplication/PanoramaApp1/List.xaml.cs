@@ -14,10 +14,6 @@ using Windows.UI.Popups;
 using System.ComponentModel;
 
 
-
-
-
-
 namespace PanoramaApp1
 {
     public partial class Page1 : PhoneApplicationPage
@@ -43,7 +39,7 @@ namespace PanoramaApp1
         }
 
 
-
+        // Adds new item to the list
         void Add_New_Item(object sender, EventArgs e)
         {
 
@@ -119,16 +115,12 @@ namespace PanoramaApp1
         private void Checked(object sender, RoutedEventArgs e)
         {
 
-            var hold = this.ListData.ItemsSource;
-                var hold2 = this.InsideCartData.ItemsSource;
-            
-            
-               //Something is goign wrong here.... 
-            // need to fix check
-                int count =0;
-                var FoundName = "temp";
+            var CartData = this.ListData.ItemsSource;
+            int count =0;
+            var FoundName = "temp";
             var FoundGroup = "temp";
-                foreach (List<ListObject> temp in hold)
+            // checks First List for changed value
+                foreach (List<ListObject> temp in CartData)
                 {
                     do
                     {
@@ -144,22 +136,24 @@ namespace PanoramaApp1
                         }
                         else // if data is not found change itemsource 
                         {
-                            hold = this.InsideCartData.ItemsSource;
+                            CartData = this.InsideCartData.ItemsSource;
                             count = -1;
+                            break;
                         }
 
                         count++;
                     } while (temp.Count > count);
                     if (count==0)
                     {
-                        hold = this.InsideCartData.ItemsSource;
+                        CartData = this.InsideCartData.ItemsSource;
                         count = -1;
                     }
                 }
+            // count = -1 to signify that no data exists in the first column
             if (count == -1)
             {
                 count = 0;
-                foreach (List<ListObject> temp in hold)
+                foreach (List<ListObject> temp in CartData)
                 {
                     do
                     {
@@ -175,7 +169,6 @@ namespace PanoramaApp1
                         }
                         else // if data is not found change itemsource 
                         {
-                            hold = this.InsideCartData.ItemsSource;
                             count = -1;
                         }
 
@@ -185,18 +178,17 @@ namespace PanoramaApp1
             }
 
                 count = 0;
-
                 UpdateListData(FoundGroup, FoundName);
                 Update();       
         }
-
+        //Searches for data inside of the list, and changes value from True -> False, or False -> True
  private void UpdateListData(string Group, string Name)
         {
             //check if temp[0].Group = selected
             // separates data into two lists
             var has = myGlobals.ListofItemsinList.Find(ListObject => ListObject.Group == Group && ListObject.Name == Name);
             var t3 = myGlobals.ListofItemsinList.FindIndex(ListObject => ListObject.Group == Group && ListObject.Name == Name);
-
+            // Updates existing data to show the change between lists.
             if (has.InCart == false)
             {
                 ListObject holdlist = new ListObject(has.Name, has.Quantity, has.Group, true);
@@ -208,6 +200,7 @@ namespace PanoramaApp1
                 myGlobals.ListofItemsinList[t3] = holdlist;
             }
         }
+
  //run an update function, remove previous checkboxes. add new ones
  public void Update()
  {
@@ -215,6 +208,7 @@ namespace PanoramaApp1
      popup.IsOpen = false;
      List<ListObject> NotInCart = new List<ListObject>();
      List<ListObject> InsideCart = new List<ListObject>();
+     // removes pairs from global list
      foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
      {
          if (list.Key == myGlobals.CurrentList)
@@ -224,6 +218,7 @@ namespace PanoramaApp1
          }
          else { }
      }
+     //Moves data to two different lists, based on value.InCart Data
      foreach (ListObject value in myGlobals.ListofItemsinList)
      {
          if (value.InCart == false)
@@ -236,7 +231,7 @@ namespace PanoramaApp1
 
          }
      }
-
+     //Convert Key Groups into ItemSource and updates layout
      List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
      ListData.ItemsSource = DataSource;
      ListData.UpdateLayout();
