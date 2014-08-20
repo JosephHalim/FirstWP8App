@@ -10,7 +10,6 @@ namespace PanoramaApp1
 {
     public class ListObject : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public string Quantity {get;set;}
         public string Group { get; set; }
         public string Name { get; set; }
@@ -43,6 +42,10 @@ namespace PanoramaApp1
             get { return Group; }
             set { Group = value; }
         }
-      
+
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged = null;
     }
 }

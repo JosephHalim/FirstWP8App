@@ -12,8 +12,6 @@ using Microsoft.Phone.Shell;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using System.ComponentModel;
-
-
 namespace PanoramaApp1
 {
     public partial class Page1 : PhoneApplicationPage
@@ -25,49 +23,39 @@ namespace PanoramaApp1
         }
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-
             //Update List Title and populate list
-
             ListHeader.Header = myGlobals.CurrentList;
             Update();
         }
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-
             //ListofItems.Children.Clear();
         }
-
-
         // Adds new item to the list
         void Add_New_Item(object sender, EventArgs e)
         {
-
             WindowsPhoneControl1 control = new WindowsPhoneControl1();
             popup.Child = control;
             popup.IsOpen = true;
             //Adds function to the accept text button
             control.AcceptText.Click += (s, args) =>
-                {
-                    string ProductName = control.ItemName.Text.ToString();
-                    string NumberofUnits = control.Quantity.Text.ToString();
-                    string group = control.Category.Text.ToString();
-                    bool incart = false;
-                    //ListObject Item = new ListObject(ProductName, NumberofUnits, group);
-                    //  new ListObject(ProductName, NumberofUnits, group);
-
-                    myGlobals.ListofItemsinList.Add(new ListObject( ProductName,NumberofUnits,group, incart));
-                    myGlobals.ListofItems[myGlobals.CurrentList] = myGlobals.ListofItemsinList;
-                 
-                    popup.IsOpen = false;
-                    Update();
-                };
+            {
+                string ProductName = control.ItemName.Text.ToString();
+                string NumberofUnits = control.Quantity.Text.ToString();
+                string group = control.Category.Text.ToString();
+                bool incart = false;
+                //ListObject Item = new ListObject(ProductName, NumberofUnits, group);
+                // new ListObject(ProductName, NumberofUnits, group);
+                myGlobals.ListofItemsinList.Add(new ListObject(ProductName, NumberofUnits, group, incart));
+                myGlobals.ListofItems[myGlobals.CurrentList] = myGlobals.ListofItemsinList;
+                popup.IsOpen = false;
+                Update();
+            };
             //Adds control to cancel button
             control.CancelText.Click += (s, args) =>
-                {
-                    popup.IsOpen = false;
-                };
-
+            {
+                popup.IsOpen = false;
+            };
         }
         protected override void OnBackKeyPress(CancelEventArgs e)
         {
@@ -78,20 +66,14 @@ namespace PanoramaApp1
                 e.Cancel = true;
             }
         }
-
         private void DeleteList(object sender, EventArgs e)
         {
-
         }
         private void SortData(object sender, EventArgs e)
         {
-
         }
-
-        
         private void HandleTap(object sender, RoutedEventArgs e)
         {
-
             TextBlock hold = new TextBlock();
             hold = (TextBlock)sender;
             string[] split = hold.Text.Split(' ');
@@ -106,49 +88,51 @@ namespace PanoramaApp1
             }
             NavigationService.Navigate(new Uri("/NewItem.xaml", UriKind.Relative));
         }
-
-        private void HandleEdit(object sender, RoutedEventArgs e)
+    
+        private void HandleEdit(object sender, EventArgs e)
         {
-            MessageBox.Show("HandleEdit");
+                MessageBox.Show("HandleEdit");
+                var temp = sender;
+                var datacontext = (StackPanel)sender;
+                var text = ((ListObject)datacontext.DataContext);
+                MessageBox.Show(text.InCart.ToString());
+                        
         }
-          
         private void Checked(object sender, RoutedEventArgs e)
         {
-
             var CartData = this.ListData.ItemsSource;
-            int count =0;
+            int count = 0;
             var FoundName = "temp";
             var FoundGroup = "temp";
             // checks First List for changed value
-                foreach (List<ListObject> temp in CartData)
+            foreach (List<ListObject> temp in CartData)
+            {
+                do
                 {
-                    do
+                    //finds if data is in FirstList
+                    if (temp.Count > 0)
                     {
-                        //finds if data is in FirstList
-                        if (temp.Count > 0)
+                        if (temp[count].InCart.ToString() == "True")
                         {
-                            if (temp[count].InCart.ToString() == "True")
-                            {
-                                FoundName = temp[count].Name;
-                                FoundGroup = temp[count].Group;
-                                break;
-                            }
-                        }
-                        else // if data is not found change itemsource 
-                        {
-                            CartData = this.InsideCartData.ItemsSource;
-                            count = -1;
+                            FoundName = temp[count].Name;
+                            FoundGroup = temp[count].Group;
                             break;
                         }
-
-                        count++;
-                    } while (temp.Count > count);
-                    if (count==0)
+                    }
+                    else // if data is not found change itemsource
                     {
                         CartData = this.InsideCartData.ItemsSource;
                         count = -1;
+                        break;
                     }
+                    count++;
+                } while (temp.Count > count);
+                if (count == 0)
+                {
+                    CartData = this.InsideCartData.ItemsSource;
+                    count = -1;
                 }
+            }
             // count = -1 to signify that no data exists in the first column
             if (count == -1)
             {
@@ -167,22 +151,20 @@ namespace PanoramaApp1
                                 break;
                             }
                         }
-                        else // if data is not found change itemsource 
+                        else // if data is not found change itemsource
                         {
                             count = -1;
                         }
-
                         count++;
                     } while (temp.Count > count);
                 }
             }
-
-                count = 0;
-                UpdateListData(FoundGroup, FoundName);
-                Update();       
+            count = 0;
+            UpdateListData(FoundGroup, FoundName);
+            Update();
         }
         //Searches for data inside of the list, and changes value from True -> False, or False -> True
- private void UpdateListData(string Group, string Name)
+        private void UpdateListData(string Group, string Name)
         {
             //check if temp[0].Group = selected
             // separates data into two lists
@@ -200,47 +182,46 @@ namespace PanoramaApp1
                 myGlobals.ListofItemsinList[t3] = holdlist;
             }
         }
-
- //run an update function, remove previous checkboxes. add new ones
- public void Update()
- {
-
-     popup.IsOpen = false;
-     List<ListObject> NotInCart = new List<ListObject>();
-     List<ListObject> InsideCart = new List<ListObject>();
-     // removes pairs from global list
-     foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
-     {
-         if (list.Key == myGlobals.CurrentList)
-         {
-             myGlobals.ListofItemsinList = list.Value;
-             break;
-         }
-         else { }
-     }
-     //Moves data to two different lists, based on value.InCart Data
-     foreach (ListObject value in myGlobals.ListofItemsinList)
-     {
-         if (value.InCart == false)
-         {
-             NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
-         }
-         else
-         {
-             InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
-
-         }
-     }
-     //Convert Key Groups into ItemSource and updates layout
-     List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
-     ListData.ItemsSource = DataSource;
-     ListData.UpdateLayout();
-     List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
-     InsideCartData.ItemsSource = InsideCartSource;
-     InsideCartData.UpdateLayout();
- }
+        //run an update function, remove previous checkboxes. add new ones
+        public void Update()
+        {
+            popup.IsOpen = false;
+            List<ListObject> NotInCart = new List<ListObject>();
+            List<ListObject> InsideCart = new List<ListObject>();
+            // removes pairs from global list
+            foreach (KeyValuePair<string, List<ListObject>> list in myGlobals.ListofItems)
+            {
+                if (list.Key == myGlobals.CurrentList)
+                {
+                    myGlobals.ListofItemsinList = list.Value;
+                    break;
+                }
+                else { }
+            }
+            //Moves data to two different lists, based on value.InCart Data
+            foreach (ListObject value in myGlobals.ListofItemsinList)
+            {
+                if (value.InCart == false)
+                {
+                    NotInCart.Add(new ListObject(value.NameofItem, value.NumberofItems, value.GroupList, value.InCart));
+                }
+                else
+                {
+                    InsideCart.Add(new ListObject(value.NameofItem, value.NameofItem, value.GroupList, value.InCart));
+                }
+            }
+            //Convert Key Groups into ItemSource and updates layout
+            List<AlphaKeyGroup<ListObject>> DataSource = AlphaKeyGroup<ListObject>.CreateGroups(NotInCart, (ListObject s) => { return s.GroupList; }, true);
+            ListData.ItemsSource = DataSource;
+        //    this.ComboBox1.SelectedIndexChanged +=  new System.EventHandler(ComboBox1_SelectedIndexChanged); 
+     //      ListData.SelectionChanged += new SelectionChangedEventHandler(HandleEdit);
+            
+            ListData.UpdateLayout();
+          
+           
+            List<AlphaKeyGroup<ListObject>> InsideCartSource = AlphaKeyGroup<ListObject>.CreateGroups(InsideCart, (ListObject s) => { return s.GroupList; }, true);
+            InsideCartData.ItemsSource = InsideCartSource;
+            InsideCartData.UpdateLayout();
+        }
     }
-    
-
 }
-

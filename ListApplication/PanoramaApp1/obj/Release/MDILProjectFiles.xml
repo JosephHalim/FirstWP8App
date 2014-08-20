@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Files>
+  <XAPFiles>
+    <File>resources.pri</File>
+    <File>PanoramaApp1.dll</File>
+    <File>Toolkit.Content\ApplicationBar.Add.png</File>
+    <File>Toolkit.Content\ApplicationBar.Cancel.png</File>
+    <File>Toolkit.Content\ApplicationBar.Check.png</File>
+    <File>Toolkit.Content\ApplicationBar.Delete.png</File>
+    <File>Toolkit.Content\ApplicationBar.Select.png</File>
+    <File>Assets\Images\check.png</File>
+    <File>Assets\Images\add.png</File>
+    <File>Assets\AlignmentGrid.png</File>
+    <File>Assets\BadgeLogo.png</File>
+    <File>Assets\Images\cancel.png</File>
+    <File>Assets\Images\folder.png</File>
+    <File>Assets\Logo.png</File>
+    <File>Assets\SplashScreen.png</File>
+    <File>Assets\SquareTile150x150.png</File>
+    <File>Assets\SquareTile71x71.png</File>
+    <File>Assets\StoreLogo.png</File>
+    <File>Assets\WideLogo.png</File>
+    <File>Assets\Tiles\FlipCycleTileLarge.png</File>
+    <File>Assets\Tiles\FlipCycleTileSmall.png</File>
+    <File>Assets\Tiles\IconicTileMediumLarge.png</File>
+    <File>Assets\Tiles\IconicTileSmall.png</File>
+    <File>AppManifest.xaml</File>
+    <File>Assets\ApplicationIcon.png</File>
+    <File>Assets\Tiles\FlipCycleTileMedium.png</File>
+    <File>Coding4Fun.Toolkit.Audio.dll</File>
+    <File>Coding4Fun.Toolkit.Controls.dll</File>
+    <File>Coding4Fun.Toolkit.Net.dll</File>
+    <File>Coding4Fun.Toolkit.Storage.dll</File>
+    <File>GalaSoft.MvvmLight.Extras.WP8.dll</File>
+    <File>GalaSoft.MvvmLight.WP8.dll</File>
+    <File>Microsoft.Phone.Controls.dll</File>
+    <File>Microsoft.Phone.Controls.Toolkit.dll</File>
+    <File>Microsoft.Practices.ServiceLocation.dll</File>
+    <File>System.Windows.Interactivity.dll</File>
+    <File>GalaSoft.MvvmLight.Extras.WP8.xml</File>
+    <File>GalaSoft.MvvmLight.WP8.xml</File>
+    <File>Microsoft.Practices.ServiceLocation.xml</File>
+    <File>WMAppManifest.xml</File>
+    <File>MDILProjectFiles.xml</File>
+    <File>AppxManifest.xml</File>
+  </XAPFiles>
+  <APPXFiles />
+</Files>
